@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> js objects </title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+     $(document).ready(function(){
+      var sentence = "";
+      var me = {
+      "first":" Richard",
+      "last":" Yee",
+      "classes":[" html", " painting", " asian painting", " graphic design", " typography"],
+      "home":[" manhattan"," san jose"],
+      "schools":{
+        "highschools": [" old orchard",  " saint francis"],
+        "colleges": " cooper union"
+        }
+      }
+
+      console.log(me);
+      var introduction = "My name is" +  me.first + me.last + ".";
+      console.log(introduction);
+       $("ul").html("<li>"+introduction+"</li>");
+      var lastlocation= me.home.pop();
+      var locationjoin= me.home.join(", ");
+      var locations= "I have residencies in" + locationjoin + " and" + lastlocation;
+      console.log(locations);
+      $("ul").append("<li>"+locations+"</li>");
+      var schoolintro= "I currently go to" + me.schools.colleges + "."
+      console.log(schoolintro);
+      $("ul").append("<li>"+schoolintro+"</li>");
+      var lasths = me.schools.highschools.pop();
+      var hsjoin= me.schools.highschools.join(", ");
+      var hsintro = "My past high schools were" + hsjoin + " and" + lasths;
+      console.log(hsintro);
+      $("ul").append("<li>"+hsintro+"</li>");
+      var lastClass = me.classes.pop();
+      var list = me.classes.join(", ");
+      var courses = "This semester, I am taking" + list + " and" + lastClass + "."
+     console.log(courses)
+     $("ul").append("<li>"+courses+"</li>");
+});
+      </script>
+  </head>
+  <body>
+    <ul>
+    </ul>
+  </body>
+</html>
